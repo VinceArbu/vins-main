@@ -303,10 +303,6 @@ main{
   z-index: 100;
   transform: translateY(-30rem);
   font-size: x-small;
-  /*transform-origin: top right;
-  right:0;
-  top:0;
-  transform: rotate(-90deg)*/
 }
 
 .swiper-pagination-bullet{
@@ -753,7 +749,6 @@ main{
 
 .ian2020__information-heading{
   background: linear-gradient(to right, #4cbaff 0%, #9049e7 15%);
-  /*font-family: Arial Rounded Mt Bold;  /* Replicating CRAFT's font */
   background-clip: text;
 	-webkit-text-fill-color: transparent;
   padding-bottom: 2.5rem;
@@ -807,10 +802,6 @@ main{
   margin-bottom: 2rem;
 }
 
-/*.numbering{
-  transform: translate(0, 4rem);
-}*/
-
 .footer__button-post{
   transform: translateY(-14rem);
   float: left;
@@ -841,10 +832,6 @@ main{
   height: 14vh;
   transform: translateY(4px);
   padding-left: 1rem;
-  /*float: right;
-  position: absolute;
-  bottom: 0;
-  right: 3rem;*/
 }
 
 @media (max-width: 48em) {
@@ -852,12 +839,6 @@ main{
     display: none;
   }
 }
-
-/*@media (max-width: 31.25em) {
-  .card img{
-    display: none;
-  }
-}*/
 
 .ian__subheading{
   text-align: left;
@@ -875,28 +856,9 @@ main{
   margin-left: 20px;
 }
 
-/* -- comments --*/
-/*.comments__menu{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 25rem;
-  height: 100vh;
-  background-color: var(--dark-clr);
-  transform: translateX(-26rem);
-  z-index: 999;
-  transition: transform .5s ease-in;
-}
-
-.comments__menu.active{
-  transform: translateX(0);
-}*/
-/* -- hr -- */
 hr.post{
   padding-bottom: 6rem;
   border: none;
-  /*border-top: 1.5px dashed var(--body-font-clr);
-  height: 1px;*/
   margin: auto;
   text-align: center;
   width: 75%;
@@ -912,8 +874,6 @@ letter-spacing: 10px;
 hr.blog{
   padding-bottom: 1rem;
   border: none;
-  /*border-top: 1.5px dashed var(--body-font-clr);
-  height: 1px;*/
   margin: auto;
   text-align: center;
   transform: translateY(-6rem);
