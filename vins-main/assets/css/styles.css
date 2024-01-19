@@ -388,7 +388,7 @@ main{
 .skills__list,
 .skills__list-divider{
   display: grid;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .skills__list-icon{
