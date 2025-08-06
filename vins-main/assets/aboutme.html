@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vince Joseph Arbutante's Portfolio</title>
+    <!-- remixicon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <!--! === header === --> 
+    <header class="header">
+        <nav class="navbar container">
+            <a href="./index.html" class="navbar__logo">
+                <h3 style="font-size: 2.5rem; color: var(--light-clr-3); font-family: Bebas Neue; line-height: 1; border-bottom: 1px var(--light-clr-3) double; ">  VINS  </h3>
+            </a>
+            <!-- breadcrumb -->
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>About Me</li>
+            </ul>
+            <!-- theme change -->
+            <div class="theme"> 
+            <i class="ri-moon-line change-theme" id="theme-button"></i>
+            </div>
+        </nav>
+    </header>
+    <!--! === main === -->
+    <main>
+        <button type="button" class="btn btn--action" id="menu-toggler">
+        </button>
+        <!--! === ABOUT.html === -->
+        <section class="About" id="Aboutme">
+            <div class="About__container container">
+                <div class="About__information">
+                    <h1 class="About__information-title title">About Me</h1>
+                    <br>
+                    <p class="post__information-quote">‘Celebrate the pursuit of your passion with enthusiasm.’</p>
+                    <p class="post__information-description">Vince is a college student and amateur at creating websites and games.
+                        When not behind a desk, he loves trying new food and being physically active. 
+                        He's very social and enjoys meeting new people.</p>
+                    <p class="post__information-description">He was born on July 30, 2003 lived in San Pedro Laguna.</p>
+                    <p class="post__information-description">And at the time of 2024, he's a second year undergrad at MMCL. 
+                        Currently pursuing Computer Science, but also with a bit of outgoing student during free time.</p>
+                    <p class="post__information-description"><u>Fun fact</u>: He loves kpop girl group...</p>
+                </div>
+            </div>
+        </section>
+        <!--! === timeline === -->
+        <section class="timeline" id="timeline">
+            <div class="timeline__container container">
+                <div class="timeline__tabs">
+                    <div class="timeline__button button--flex timeline__active" data-target="#education">
+                        <i class="ri-book-open-line"></i>
+                        Education
+                    </div>
+                    <div class="timeline__button button--flex" data-target="#journey">
+                        <i class="ri-award-line"></i>
+                        Accolades
+                    </div>
+                </div>
+                <div class="timeline__sections">
+                    <!--! === timeline section 1 === -->
+                    <div class="timeline__content timeline__active" data-content id="education">
+
+                        <!--! === timeline 1 (right) === -->
+                        <div class="timeline__data">
+                            <div></div>
+
+                            <div>
+                                <span class="timeline__rounder"></span>
+                                <span class="timeline__line"></span>
+                            </div>
+
+                            <div>
+                                <h3 class="timeline__title">Bachelor of Science in Computer Science</h3>
+                                <span class="timeline__subtitle">MMCL, PH</span>
+                                <div class="timeline__calendar">
+                                    <i class="ri-calendar-2-line"></i>
+                                    August, 2022 - Present
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--! === timeline 2 (left) === -->
+                        <div class="timeline__data" style="text-align: right;">
+                            <div>
+                                <h3 class="timeline__title">Higher Secondary School Certificate</h3>
+                                <span class="timeline__subtitle">Liceo de San Pedro, Laguna</span>
+                                <div class="timeline__calendar">
+                                    <i class="ri-calendar-2-line"></i>
+                                    August, 2020 - June, 2022
+                                </div>
+                            </div>
+                            <div>
+                                <span class="timeline__rounder">100%</span>
+                                <span class="timeline__line"></span>
+                            </div>
+                        </div>
+
+                        <!--! === timeline 3 (right) === -->
+                        <div class="timeline__data">
+                            <div></div>
+
+                            <div>
+                                <span class="timeline__rounder">100%</span>
+                                <span class="timeline__line"></span>
+                            </div>
+
+                            <div>
+                                <h3 class="timeline__title">Secondary Certificate</h3>
+                                <span class="timeline__subtitle">Liceo de San Pedro, Laguna</span>
+                                <div class="timeline__calendar">
+                                    <i class="ri-calendar-2-line"></i>
+                                    July, 2016 - June, 2020
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--! === TIMELINE 4 (left) === -->
+                        <div class="timeline__data" style="text-align: right;">
+                            <div>
+                                <h3 class="timeline__title">Middle School Certificate</h3>
+                                <span class="timeline__subtitle">JFSCS, Laguna</span>
+                                <div class="timeline__calendar">
+                                    <i class="ri-calendar-2-line"></i>
+                                    July, 2011 - June, 2016
+                                </div>
+                            </div>
+                            <div>
+                                <span class="timeline__rounder">100%</span>
+                                <span class="timeline__line"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--! === TIMELINE SECTION 2 === -->
+                    <div class="timeline__content" data-content id="journey">
+                        <!--! === TIMELINE 1 (right) === -->
+                        <div class="timeline__data">
+                            <div></div>
+
+                            <div>
+                                <span class="timeline__rounder">3rd</span>
+                                <span class="timeline__line"></span>
+                            </div>
+
+                            <div>
+                                <h3 class="timeline__title">Dean's Lister</h3>
+                                <span class="timeline__subtitle">College</span>
+                                <div class="timeline__calendar">
+                                    <i class="ri-calendar-2-line"></i>
+                                    Present
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--! === TIMELINE 2 (left) === -->
+                        <div class="timeline__data" style="text-align: right;">
+                            <div>
+                                <h3 class="timeline__title">High Honor Student</h3>
+                                <span class="timeline__subtitle">Grade 11 - 12</span>
+                                <div class="timeline__calendar">
+                                    <i class="ri-calendar-2-line"></i>
+                                    2020-2022
+                                </div>
+                            </div>
+                            <div>
+                                <span class="timeline__rounder">2nd</span>
+                                <span class="timeline__line"></span>
+                            </div>
+                        </div>
+
+                        <!--! === TIMELINE 3 (right) === -->
+                        <div class="timeline__data">
+                            <div></div>
+
+                            <div>
+                                <span class="timeline__rounder">1st</span>
+                                <span class="timeline__line"></span>
+                            </div>
+
+                            <div>
+                                <h3 class="timeline__title">Consistent Honor Student</h3>
+                                <span class="timeline__subtitle">Grade 1 - 10</span>
+                                <div class="timeline__calendar">
+                                    <i class="ri-calendar-2-line"></i>
+                                    2011-2020
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+    </main>
+    <!--! === FOOTER === -->
+     <!--! === FOOTER === -->
+     <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__group">
+                <h2 class="footer__title title titttle--main">Vince Joseph Arbutante's Social Media</h2> 
+                <a href="mailto:vincejoseph@gmail.com" class="btn btn--text btn--transparent">Contact me</a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="footer__group">
+                <ul class="footer__list">
+                    <li class="footer__list-item">
+                        <a href="mailto:vincejoseph@gmail.com" class="footer__list-link">
+                            <i class="ri-mail-add-line"></i>
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="https://github.com/VinceArbu" class="footer__list-link">
+                            <i class="ri-github-line"></i>
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="https://twitter.com/VinceArbu" class="footer__list-link">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- SWIPERJS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- JS -->
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
