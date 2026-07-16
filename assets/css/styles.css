@@ -296,6 +296,12 @@ main{
   object-fit: cover;
 }
 
+.portfolio__img--contain {
+  object-fit: contain !important;
+  background-color: #ffffff;
+  padding: 2rem;
+}
+
 .portfolio-metadata__description{
   text-align: right;
   margin-right: 1rem;
