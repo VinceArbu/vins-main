@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicum Report - Vince Joseph Arbutante</title>
+    <!-- remixicon -->
+    <link href="./assets/css/remixicon.css" rel="stylesheet">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        /* Custom Premium Practicum Page Styles */
+        .practicum {
+            padding-top: 12rem;
+            padding-bottom: 8rem;
+        }
+
+        .practicum__container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Banner */
+        .practicum-hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(190, 210, 201, 0.1) 0%, rgba(225, 231, 221, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 5rem 3rem;
+            text-align: center;
+            margin-bottom: 5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .practicum-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(190, 210, 201, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .practicum-hero__logo {
+            height: 90px;
+            width: auto;
+            display: inline-block;
+            margin-bottom: 2rem;
+            object-fit: contain;
+            /* Make the logo white in dark mode for optimal contrast on the dark background */
+            filter: brightness(0) invert(1);
+        }
+
+        body.light-theme .practicum-hero__logo {
+            /* Restore the original blue branding colors in light mode */
+            filter: none;
+        }
+
+        .practicum-hero__title {
+            font-family: var(--title-font);
+            font-size: clamp(3.2rem, 5vw, 5.5rem);
+            color: var(--light-clr-3);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .practicum-hero__subtitle {
+            font-size: 1.8rem;
+            color: var(--light-clr-2);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .practicum-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .practicum-stat {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            min-width: 170px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .practicum-stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--light-clr-2);
+        }
+
+        body.light-theme .practicum-stat {
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        body.light-theme .practicum-stat:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        .practicum-stat__value {
+            font-family: var(--title-font);
+            font-size: 2.8rem;
+            color: var(--light-clr-2);
+            margin-bottom: 0.5rem;
+        }
+
+        body.light-theme .practicum-stat__value {
+            color: var(--light-clr-3);
+        }
+
+        .practicum-stat__label {
+            font-size: 1.1rem;
+            color: var(--body-font-clr);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Layout */
+        .practicum-section {
+            margin-bottom: 5rem;
+        }
+
+        .practicum-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 4rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .practicum-card:hover {
+            border-color: rgba(190, 210, 201, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        body.light-theme .practicum-card {
+            background: rgba(0, 0, 0, 0.01);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        body.light-theme .practicum-card:hover {
+            border-color: rgba(89, 89, 89, 0.2);
+        }
+
+        .practicum-card__title {
+            font-family: var(--title-font);
+            font-size: 2.6rem;
+            color: var(--light-clr-3);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1.2rem;
+        }
+
+        body.light-theme .practicum-card__title {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .practicum-card__title i {
+            color: var(--light-clr-2);
+            font-size: 2.4rem;
+        }
+
+        .practicum-card__description {
+            font-size: 1.5rem;
+            line-height: 1.7;
+            color: var(--body-font-clr);
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .practicum-card__description:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Mission & Vision Grid */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .mv-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .mv-box {
+            background: rgba(255, 255, 255, 0.01);
+            border-left: 3px solid var(--light-clr-2);
+            padding: 2.5rem;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        body.light-theme .mv-box {
+            background: rgba(0, 0, 0, 0.005);
+        }
+
+        .mv-box__title {
+            font-family: var(--title-font);
+            font-size: 2.2rem;
+            color: var(--light-clr-3);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .mv-box__title i {
+            color: var(--light-clr-2);
+        }
+
+        .mv-box__text {
+            font-size: 1.45rem;
+            line-height: 1.6;
+            color: var(--body-font-clr);
+            text-align: justify;
+        }
+
+        /* Modern Table styling */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 2rem;
+        }
+
+        body.light-theme .table-wrapper {
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.4rem;
+            text-align: left;
+        }
+
+        .hours-table th {
+            background-color: rgba(255, 255, 255, 0.04);
+            font-family: var(--title-font);
+            font-size: 1.8rem;
+            color: var(--light-clr-3);
+            letter-spacing: 0.5px;
+            padding: 1.5rem 2rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+        }
+
+        body.light-theme .hours-table th {
+            background-color: rgba(0, 0, 0, 0.03);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .hours-table td {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--body-font-clr);
+        }
+
+        body.light-theme .hours-table td {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .hours-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        body.light-theme .hours-table tr:hover td {
+            background-color: rgba(0, 0, 0, 0.005);
+        }
+
+        .hours-table tr.total-row td {
+            background-color: rgba(190, 210, 201, 0.08);
+            font-weight: 700;
+            color: var(--light-clr-3);
+            font-size: 1.6rem;
+            border-top: 2px solid rgba(190, 210, 201, 0.3);
+        }
+
+        body.light-theme .hours-table tr.total-row td {
+            background-color: rgba(89, 89, 89, 0.08);
+            border-top: 2px solid rgba(89, 89, 89, 0.3);
+        }
+
+        /* Synthesis blocks */
+        .synthesis-block {
+            margin-bottom: 3.5rem;
+            background: rgba(255, 255, 255, 0.01);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .synthesis-block:hover {
+            transform: translateX(5px);
+            border-color: rgba(190, 210, 201, 0.15);
+        }
+
+        body.light-theme .synthesis-block {
+            background: rgba(0, 0, 0, 0.005);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .synthesis-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .synthesis-block__header {
+            font-family: var(--title-font);
+            font-size: 2.2rem;
+            color: var(--light-clr-2);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        body.light-theme .synthesis-block__header {
+            color: var(--light-clr-3);
+        }
+
+        .synthesis-block__header i {
+            font-size: 2rem;
+        }
+
+        .synthesis-block__content {
+            font-size: 1.45rem;
+            line-height: 1.65;
+            color: var(--body-font-clr);
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <!--! === header === -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="./index.html" class="navbar__logo">
+                <h3 style="font-size: 2.5rem; color: var(--light-clr-3); font-family: Bebas Neue; line-height: 1; border-bottom: 1px var(--light-clr-3) double; ">
+                    VINS </h3>
+            </a>
+            <!-- breadcrumb -->
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Practicum</li>
+            </ul>
+            <!-- dark/light theme-->
+            <div class="theme">
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- menu toggler to avoid JS error on app.js load -->
+    <button type="button" class="btn btn--action" id="menu-toggler" style="display: none;"></button>
+
+    <!--! === main === -->
+    <main class="practicum">
+        <div class="practicum__container">
+            
+            <!-- Hero section -->
+            <div class="practicum-hero">
+                <img src="./assets/images/KPMG_logo.svg" alt="KPMG Logo" class="practicum-hero__logo">
+                <h1 class="practicum-hero__title">Practicum Final Report</h1>
+                <p class="practicum-hero__subtitle">ITS Governance Internship</p>
+                <div class="practicum-stats">
+                    <div class="practicum-stat">
+                        <div class="practicum-stat__value">422 Hrs</div>
+                        <div class="practicum-stat__label">Hours Rendered</div>
+                    </div>
+                    <div class="practicum-stat">
+                        <div class="practicum-stat__value">ITS Gov</div>
+                        <div class="practicum-stat__label">Assigned Team</div>
+                    </div>
+                    <div class="practicum-stat">
+                        <div class="practicum-stat__value">KPMG PH</div>
+                        <div class="practicum-stat__label">Company Partner</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Background -->
+            <section class="practicum-section">
+                <div class="practicum-card">
+                    <h2 class="practicum-card__title">
+                        <i class="ri-building-4-line"></i> Company Background
+                    </h2>
+                    <p class="practicum-card__description">
+                        The student interned at KPMG Philippines (R.G. Manabat & Co.), a member firm of the global KPMG network and one of the "Big Four" professional services firms, at its national headquarters in Makati City. The firm is widely recognized for delivering high-quality audit, tax, and advisory services, as well as technology consulting to a diverse portfolio of local and international clients. KPMG Philippines is dedicated to driving digital transformation, fostering robust corporate integrity, and implementing sustainable business solutions across its operations.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Mission and Vision -->
+            <section class="practicum-section">
+                <div class="practicum-card">
+                    <h2 class="practicum-card__title">
+                        <i class="ri-focus-3-line"></i> Mission and Vision
+                    </h2>
+                    <div class="mv-grid">
+                        <div class="mv-box">
+                            <h3 class="mv-box__title"><i class="ri-flag-line"></i> Mission</h3>
+                            <p class="mv-box__text">
+                                The mission of KPMG Philippines is to empower clients through digital transformation by building robust, industry-leading expertise in critical modern domains, including data analytics, cybersecurity, and artificial intelligence (AI). The firm is deeply committed to delivering high-quality professional services in audit, tax, and advisory, driven by a highly talented, purpose-driven workforce operating with passion and integrity. By leveraging these advanced technical and governance capabilities, they solve complex business challenges to fulfill their core purpose: to inspire confidence and empower change.
+                            </p>
+                        </div>
+                        <div class="mv-box">
+                            <h3 class="mv-box__title"><i class="ri-eye-line"></i> Vision</h3>
+                            <p class="mv-box__text">
+                                The vision of KPMG Philippines (R.G. Manabat & Co.) is to help clients prosper by delivering deep, data-driven insights and innovative solutions. The firm continuously strives to be the Clear Choice for leading and emerging organizations seeking to achieve their strategic goals while actively protecting their stakeholders' vital interests.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nature of Assignments or Task Given -->
+            <section class="practicum-section">
+                <div class="practicum-card">
+                    <h2 class="practicum-card__title">
+                        <i class="ri-task-line"></i> Nature of Assignments or Tasks Given
+                    </h2>
+                    <p class="practicum-card__description">
+                        During the internship at KPMG Philippines (R.G. Manabat & Co.), the student was assigned a diverse range of governance, development, and operational tasks designed to evaluate their technical adaptability and theoretical knowledge within an enterprise IT environment. The internship began with an official corporate onboarding session that introduced the intern to the firm’s core values, workplace culture, and essential administrative processes. This initial phase was immediately followed by a comprehensive Risk Management Orientation, which equipped the student with a strong foundation in corporate IT compliance standards, data privacy laws, and information security protocols necessary for setting up and securing official firm credentials.
+                    </p>
+                    <p class="practicum-card__description">
+                        As the training progressed, the student transitioned into departmental integration within the IT Services (ITS) division. Under the direct supervision of the IT Governance lead, the student gained familiarity with the operational structure of the department, analyzed internal Fiscal Year records, and assisted in modifying and auditing crucial regulatory files. The student also received early exposure to cross-team coordination by managing the departmental attendance records, directly communicating with various ITS teams to coordinate monthly updates, and reviewing internal reports to ensure administrative consistency.
+                    </p>
+                    <p class="practicum-card__description">
+                        The primary technical project assigned to the student was the development of the ITS Internal Attendance and Leave Monitoring System (also referred to as the ITS Automation System), a vital initiative designed to automate the department's manual tracking workflows. Utilizing approved enterprise Microsoft tools, the student was responsible for mapping manual process flow diagrams to identify operational bottlenecks, designing the system's UI/UX dashboard, and conducting localized user-testing check-ins. To ensure future maintenance by the application development team, the student co-created detailed user stories and prepared a comprehensive System Design Document (SDD). Due to the highly sensitive nature of KPMG's internal infrastructure and a strict non-disclosure agreement (NDA), further technical specifications, system architectures, and scripting configurations cannot be shared.
+                    </p>
+                    <p class="practicum-card__description">
+                        In addition to core system development, the student actively supported the broader IT Governance and Operations teams with various technical and administrative tasks. This included managing the Quality Assurance (QA) ticketing pipeline, handling hardware request spreadsheets for critical infrastructure tools, and drafting procurement reports for payroll desktop acquisitions, which involved conducting detailed vendor comparisons and building UPS and SBS budget proposals. The student also collaborated continuously with the Project Management Operations (PMO) team to align the development cycle with organizational frameworks, and consolidated monthly operational data, QA tickets, and attendance metrics for the IT Governance team's formal deliberation presentation to the ITS Director.
+                    </p>
+                    <p class="practicum-card__description">
+                        The intern's overall responsibilities successfully integrated practical computer science practices with enterprise-level governance. By engaging in system design, UI/UX prototyping, software documentation, and compliance auditing, the student effectively applied concepts of systems analysis, database management, and information security to real-world corporate challenges. This multi-faceted experience provided the student with a well-rounded understanding of how technical development and robust compliance structures align to support a large-scale professional services institution.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Total Hours Rendered -->
+            <section class="practicum-section">
+                <div class="practicum-card">
+                    <h2 class="practicum-card__title">
+                        <i class="ri-time-line"></i> Total Hours Rendered
+                    </h2>
+                    <p class="practicum-card__description">
+                        To fulfill the required 480 hours of practicum experience, the student has successfully rendered a total of 422 hours of hands-on professional training as of July 15, 2026, at KPMG Philippines (R.G. Manabat & Co.) in Makati City. During this period, the student engaged directly with seasoned IT professionals, participated in enterprise-level projects, and gained critical practical skills in IT governance, compliance standards, and systems development. This comprehensive corporate experience allowed the student to directly apply computer science and system analysis theories to active enterprise operations.
+                    </p>
+                    <p class="practicum-card__description">
+                        Below is a detailed breakdown of the total hours rendered by category:
+                    </p>
+                    <div class="table-wrapper">
+                        <table class="hours-table">
+                            <thead>
+                                <tr>
+                                    <th>Task Category</th>
+                                    <th>Hours Rendered</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Corporate Onboarding and Firm Orientation</td>
+                                    <td>8 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>Risk Management and Compliance Training</td>
+                                    <td>16 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>Document Managing and Compliance Review</td>
+                                    <td>80 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>Cross-Team Coordination and IT Operations Support</td>
+                                    <td>80 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>System Design and UI/UX Prototyping</td>
+                                    <td>70 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>System Development and Testing</td>
+                                    <td>120 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>PMO Alignment and Technical Documentation</td>
+                                    <td>48 hours</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td>Total Hours Rendered (as of July 15, 2026)</td>
+                                    <td>422 hours</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Synthesis of Practicum Engagement -->
+            <section class="practicum-section">
+                <div class="practicum-card">
+                    <h2 class="practicum-card__title">
+                        <i class="ri-book-open-line"></i> Synthesis of the Practicum Engagement
+                    </h2>
+                    
+                    <div class="synthesis-block">
+                        <h3 class="synthesis-block__header">
+                            <i class="ri-award-line"></i> Learnings
+                        </h3>
+                        <p class="synthesis-block__content">
+                            The practicum at KPMG Philippines provided the student with a highly active, hands-on learning experience that bridged the gap between academic computer science theories and enterprise-level IT governance. Over the course of the internship, the student gained deep technical proficiency in leveraging the Microsoft 365 suite—specifically Power Apps, Power Automate, and SharePoint Online—to design and build the ITS Unified Attendance Monitoring System. Beyond coding and UI/UX prototyping, the student learned how to map out complex operational workflows, translate real-world business rules into automated logical flows, and navigate strict corporate data security protocols. Additionally, managing the QA ticketing system, compiling procurement reports, and conducting vendor desktop comparisons expanded the student's operational skillset, teaching them how a premier professional services firm manages its underlying technological infrastructure.
+                        </p>
+                    </div>
+
+                    <div class="synthesis-block">
+                        <h3 class="synthesis-block__header">
+                            <i class="ri-lightbulb-line"></i> Realizations
+                        </h3>
+                        <p class="synthesis-block__content">
+                            Throughout this journey, the student had several eye-opening realizations about the software development lifecycle in a major corporate environment. The student quickly realized that building a successful application involves far more than just writing functional code; it requires a deep understanding of the end-users' daily operational bottlenecks and seamless cross-functional alignment with project management teams. Collaborating with the PMO team highlighted the critical importance of exhaustive technical documentation, such as user stories and System Design Documents, ensuring that any developed system can be easily understood and maintained by the application development team in the future.
+                        </p>
+                        <p class="synthesis-block__content" style="margin-top: 1.5rem;">
+                            On a personal note, the student realized that a highly professional, fast-paced "Big Four" corporate environment can also be incredibly welcoming and collaborative. The warm onboarding, constant guidance from the IT Governance team lead, and continuous mentorship turned demanding multitasking challenges into exciting, highly rewarding milestones.
+                        </p>
+                    </div>
+
+                    <div class="synthesis-block">
+                        <h3 class="synthesis-block__header">
+                            <i class="ri-checkbox-circle-line"></i> Conclusion
+                        </h3>
+                        <p class="synthesis-block__content">
+                            In conclusion, the student’s internship at KPMG Philippines was an exceptionally rewarding and fulfilling experience that successfully rounded out their academic preparation. By rendering 422 hours of structured training, the student successfully balanced high-priority tasks—from building automated systems to managing hardware budgets and audit documentations—while thoroughly enjoying the collaborative corporate culture. This practicum served as the perfect launchpad, empowering the student with the technical confidence, governance insight, and professional soft skills necessary to step smoothly into the tech industry and tackle future engineering challenges with ease.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!--! === footer === -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__group">
+                <h2 class="footer__title title titttle--main">Vince Joseph Arbutante's Social Media</h2>
+                <a href="https://www.linkedin.com/in/vince-joseph-arbutante-6957a6378" class="btn btn--text btn--transparent" target="_blank">Connect with me</a>
+            </div>
+            <br><br><br><br>
+            <div class="footer__group">
+                <ul class="footer__list">
+                    <li class="footer__list-item">
+                        <a href="mailto:vincejoseph@gmail.com" class="footer__list-link">
+                            <i class="ri-mail-add-line"></i>
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="https://github.com/VinceArbu" class="footer__list-link">
+                            <i class="ri-github-line"></i>
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="https://twitter.com/VinceArbu" class="footer__list-link">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SWIPERJS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- JS -->
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
